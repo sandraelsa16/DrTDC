@@ -1,12 +1,12 @@
 import React from 'react'
 import Carousal from '../Components/Carousal'
 import Appointment from '../Components/Appointment'
-
+import './Home.css'
 function Home() {
   return (
-    <div>
+    <div className='carousel' >
      <Carousal/>
-     <div>
+     <div className='appointment'>
       <Appointment/>
      </div>
     </div>

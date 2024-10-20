@@ -1,0 +1,41 @@
+.headings{
+    /* background-color: rgba(171, 238, 84, 0.559); */
+    /* width: 800px; */
+   margin: 10px auto;
+    color: darkblue;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container1 {
+    background-color: rgb(185, 239, 195) ;
+    width: 500px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid rgb(110, 109, 109);
+    border-radius: 25px;
+}
+
+#date {
+    /* width:280px;
+    margin-left:150px; ; */
+    padding: 10px 25px;
+}
+
+
+select{
+    border-radius: 5px;
+    border: none;
+}
+
+.captcha{
+    background-color:darkblue;
+    color: white;
+    border-radius: 10px;
+    margin-left:5px;
+    text-align:center;
+    padding: 10px 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}

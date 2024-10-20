@@ -40,11 +40,11 @@ function Footer() {
             <p><a style={{textDecoration:"none",color:"darkblue", fontFamily:"sans-serif"}} href="tel:+91 8848879292">+91 88488 79292</a></p>
     
        <div className='d-flex justify-content-between'>
-        <i className="fa-brands fa-facebook" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
+        <i className="fa-brands fa-whatsapp" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
         <i className="fa-brands fa-instagram" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
         <i className="fa-brands fa-google" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
         <i className="fa-regular fa-envelope" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
-        <i className="fa-brands fa-twitter" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i>
+        {/* <i className="fa-brands fa-twitter" style={{color:"black",fontSize:"30px",marginRight:"8px"}}></i> */}
         </div>
       </div>
     </div>
