@@ -7,7 +7,14 @@ function Appointment() {
     <div>
       <h3 className='text-center headings'>Book an Appointment for Home Collection</h3>
       <div className='container1'>
-      <Form.Control className='mb-3' type="text" placeholder="Enter patient name" />
+        <div className='d-flex'>
+          <select name="initial" id="initial" className='w-25 h-50 py-2 me-3'>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Miss">Miss</option>
+          </select>
+        <Form.Control className='mb-3' type="text" placeholder="Enter patient name" />
+        </div>
       <div className='d-flex justify-content-between'>
         <Form.Control className='mb-3 me-3 w-50' type="tel" placeholder="Phone Number " />
         <Form.Control className='mb-3 w-50' type="number" placeholder="Age" />

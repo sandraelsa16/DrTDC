@@ -4,7 +4,7 @@ Button
 function Footer() {
   return (
     <>
-      <div style={{height:'300px'}} className='d-flex justify-content-center align-items-center w-100 '>
+      <div style={{height:'300px'}} className='d-flex justify-content-center align-items-center w-100 bg-info'>
         <div className='d-flex justify-content-evenly align-items-center w-100'>
           <div className='websites' style={{width:'200px'}}>
           {/* <h5 className='mb-1'> */}
@@ -17,15 +17,15 @@ function Footer() {
           <div className='links d-flex flex-column'>
             <h4 className='mb-3'>DrTDC</h4>
               <h6>About Us</h6>
-              <h6>Contact Us</h6>
+              <h6>Health CheckUp Packages</h6>
               <h6>Location</h6>
+              <h6>Contact Us</h6>
               <h6>Careers</h6>
           </div>
           <div>
             <h4 className='mb-3'>Patients</h4>
               <h6>Home</h6>
-              <h6>Patients</h6>
-              <h6>Health CheckUp Packages</h6>
+              <h6>Appointment</h6>
               <h6>Doctors</h6>
               <h6>Contact</h6>
           </div>

@@ -8,6 +8,7 @@ import Admin from './Pages/Admin'
 import User from './Pages/User'
 import Contactinfo from './Components/Contactinfo'
 import Contact from './Pages/Contact'
+import Appointment from './Components/Appointment'
 
 Home
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/admin' element={<Admin/>}/>
         <Route path='/user' element={<User/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/appointment' element={<Appointment/>}/>
       </Routes>
       <Footer />
     </>

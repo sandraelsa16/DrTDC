@@ -1,10 +1,12 @@
-/* .carousel{
-    position: relative;
+.cert_heading{
+    color: darkblue;
+    text-align: center;
 }
 
-.appointment{
-    position: absolute;
-    left: 30px;
-    top: 10px;
-    z-index: 30px;
-} */
+Link {
+    text-decoration: none;
+}
+
+.about {
+    width: 490px;
+}
