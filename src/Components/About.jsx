@@ -3,7 +3,7 @@ import React from 'react'
 function About() {
   return (
     <div>
-       <h3 className='text-center'>About Us</h3>
+       <h3 className='text-center text-decoration-underline'>About Us</h3>
      <div className='d-flex align-items-center' >
       <div className='d-flex flex-wrap about justify-content-start m-5 gap-3'>
         <div>
@@ -30,6 +30,11 @@ function About() {
         Necessitatibus rerum ad magni velit ratione eligendi excepturi dignissimos blanditiis quidem doloribus et, at earum quibusdam unde deleniti eaque iusto dolore porro totam est nulla minus! Est qui reprehenderit voluptatum?</p>
       </div>
      </div>
+     <div className="text-center mb-5 ">
+        <button  className="btn btn-success" >
+          Know More
+        </button>
+        </div>
     </div>
   )
 }
