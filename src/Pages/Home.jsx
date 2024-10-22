@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import About from "../Components/About";
 import HealthPackage from "../Components/HealthPackage";
+import Contactinfo from "../Components/Contactinfo";
 
 function Home() {
   const packages = [1, 2, 3];
@@ -18,6 +19,7 @@ function Home() {
   };
   return (
     <div>
+      <Contactinfo />
       <Carousal />
       <Button
         style={{

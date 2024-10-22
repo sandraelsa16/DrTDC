@@ -54,11 +54,11 @@ function Header() {
                   <i class="fa-solid fa-ranking-star"></i> Popular
                   Tests/Packages
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">
+                <NavDropdown.Item href="/userlogin">
                   <i class="fa-solid fa-user"></i> View Result
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="Doctor" id="basic-nav-dropdown">
+              {/* <NavDropdown title="Doctor" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">
                   <i class="fa-regular fa-calendar-check"></i> Book an
                   Appointment
@@ -72,7 +72,7 @@ function Header() {
                 <NavDropdown.Item href="#action/3.4">
                   Existing Patients/Login
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
               <Nav.Link as={Link} to="/admin">
                 Admin
               </Nav.Link>
