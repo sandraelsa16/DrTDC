@@ -19,7 +19,7 @@ function Home() {
   };
   return (
     <div>
-      <Contactinfo />
+      {/* <Contactinfo /> */}
       <Carousal />
       <Button
         style={{

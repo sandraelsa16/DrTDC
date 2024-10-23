@@ -29,9 +29,7 @@ function Admin() {
         placeholder="Password"
       />
       <br />
-      <button class="btn btn-success w-50 mx-auto" onclick="loginacc()">
-        Log In
-      </button>
+      <button class="btn btn-success w-50 mx-auto">Log In</button>
     </div>
   );
 }
