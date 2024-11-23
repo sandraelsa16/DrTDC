@@ -3,7 +3,7 @@ import "./Contact.css";
 function Contact() {
   return (
     <div className="d-flex justify-content-evenly gap-3">
-      <div className="ms-2 container pb-5 border">
+      <div className="ms-2 container w-75 pb-5 border">
         <p className="m-5">Get in touch </p>
         <div className=" mt-5 mb-2 d-flex flex-wrap justify-content-around gap-2 ">
           <input
@@ -53,10 +53,22 @@ function Contact() {
           <button className="btn btn-primary">Submit</button>
         </div>
       </div>
-      <div className="contactarea w-50 pt-5 me-2 text-center">
+      <div className="contactarea container w-50 h-50 pt-5 me-2 text-center">
         <p className="fs-3">Doctor's Trust Diagnostic Center</p>
-        <a href=""></a>
-        <p>Doctor's Trust Diagnostic Center</p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>St.Mary's Orthodox Church
+          Building,Podiyadi,Thiruvalla
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i>+91 8848879292
+        </p>
+        <p>
+          <a href="mailto:drtrustresults@gmail.com">drtrustresults@gmail.com</a>
+        </p>
+        <p className="fs-3">Doctor's Trust Collection Center</p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i>Niranam
+        </p>
       </div>
     </div>
   );

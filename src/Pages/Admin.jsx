@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { loginAPI } from "../services/allAPI";
 
 function Admin() {
+  const navigate = useNavigate()
+   const[adminData,setAdminData]=useState({username:"",password:""})
+  const handlelogin = async()=>{
+    const{username,password}=adminData;
+    if(!username||!password){
+      toast.info("Please fill the missing fields")
+    }else {
+      try {
+        const result = await loginAPI({username,password});
+        if(result.status===200){
+          sessionStorage.setItem("username",result.data.username)
+          sessionStorage.setItem("token",result.data.token)
+          navigate("/admindashboard")
+          setAdminData({username:"",password:""})
+        }else {
+          toast.warning(result.response.data);
+        }
+      } catch (err) {
+        console.log(err);
+      
+      }
+    }
+  }
+  // console.log(adminData);
+  
+  
   return (
     // <div className="d-flex flex-column align-items-center">
     //   <label htmlFor="uname">Username:</label>
@@ -17,6 +47,7 @@ function Admin() {
         type="text"
         class="form-control "
         placeholder="Username"
+        onChange={(e)=>setAdminData({...adminData,username:e.target.value})}
       />
       <br />
       <label for="" class="fs-4">
@@ -27,9 +58,11 @@ function Admin() {
         type="password"
         class="form-control"
         placeholder="Password"
+        onChange={(e)=>setAdminData({...adminData,password:e.target.value})}
       />
       <br />
-      <button class="btn btn-success w-50 mx-auto">Log In</button>
+      <button class="btn btn-success w-50 mx-auto" onClick={handlelogin}>Log In</button>
+      <ToastContainer position="top-center" autoClose={2000} theme="colored"/>
     </div>
   );
 }

@@ -11,7 +11,10 @@ import Appointment from "./Components/Appointment";
 import AppointmentDr from "./Components/AppointmentDr";
 import HealthPackage from "./Components/HealthPackage";
 import UserLogin from "./Components/UserLogin";
-
+import Result from "./Pages/Result";
+import AdminDashboard  from "./Pages/AdminDashboard";
+import ViewDoctorsAppointment from "./Components/ViewDoctorsAppointment";
+import ViewHomeAppointments from "./Components/ViewHomeAppointments";
 function App() {
   return (
     <>
@@ -25,6 +28,11 @@ function App() {
         <Route path="/appointmentdr" element={<AppointmentDr />} />
         <Route path="/healthpackage" element={<HealthPackage />} />
         <Route path="/userlogin" element={<UserLogin />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/viewdrapp" element={<ViewDoctorsAppointment/>}/>
+        <Route path="/viewhomeapp" element={<ViewHomeAppointments/>}/>
+        
       </Routes>
       <Footer />
     </>
