@@ -24,11 +24,6 @@ function PackageCard() {
             <li>Lipid Profile Tests</li>
             <li>ECG</li>
           </ul>
-
-          <Card.Body>
-            <Card.Link href="#">Know More</Card.Link>
-            <Card.Link href="#">Enquiry</Card.Link>
-          </Card.Body>
         </Card>
       </div>
     </div>

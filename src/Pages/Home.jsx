@@ -14,7 +14,7 @@ function Home() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/appointment");
+    navigate("/userlogin");
     window.scrollTo(0, 0);
   };
   return (

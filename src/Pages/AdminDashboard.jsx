@@ -8,7 +8,7 @@ function AdminDashboard() {
       navigate("/healthpackage")
   }
   const handleResult=()=>{
-    navigate("/result")
+    navigate("/addresult")
   }
 
   const handleDrApp=()=>{
@@ -34,17 +34,6 @@ function AdminDashboard() {
 
 
         <Row>
-        {/* Sidebar */}
-        {/* <Col md={2} className="bg-dark text-white vh-100">
-          <h3 className="text-center my-4">Admin Dashboard</h3> */}
-          {/* <Nav className="flex-column">
-            <Nav.Link href="/healthPackage" className="text-white">Add Packages</Nav.Link>
-            <Nav.Link href="#users" className="text-white">Add Results</Nav.Link>
-            <Nav.Link href="#settings" className="text-white">View Doctors Appointments</Nav.Link>
-            <Nav.Link href="#reports" className="text-white">View Appointment for Home Collection</Nav.Link>
-          </Nav>
-        </Col> */}
-
          <Col>
           <Container className="mt-3 d-flex flex-column justify-content-center">
               <div className='d-flex justify-content-evenly'>

@@ -36,7 +36,7 @@ function Admin() {
     //   <label htmlFor="uname">Username:</label>
     //   <input className="form-control w-50" type="text" />
     // </div>
-    <div class="col-6 d-flex flex-column border border-secondary mx-auto p-5">
+    <div class="col-4 d-flex flex-column border border-secondary mx-auto p-5">
       <p class="text-center heading">LOG IN</p>
       <br />
       <label for="username" class="fs-4">

@@ -39,14 +39,13 @@ function Header() {
               </Nav.Link>
 
               <NavDropdown title="Patients" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/appointment">
-                  <i class="fa-regular fa-calendar-check"></i> Book for Home
-                  Collection
+                <NavDropdown.Item href="/userlogin">
+                <i class="fa-solid fa-user"></i> User Login
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/appointmentdr">
+                {/* <NavDropdown.Item href="/appointmentdr">
                   <i class="fa-regular fa-calendar-check"></i> Book an
                   Appointment with Doctor
-                </NavDropdown.Item>
+                </NavDropdown.Item> */}
                 <NavDropdown.Item onClick={handleShow}>
                   <i class="fa-solid fa-file-arrow-up"></i> Upload Prescription
                 </NavDropdown.Item>
