@@ -9,6 +9,9 @@ function AppointmentDr() {
       <div className="container1">
         <div className="d-flex">
           <select name="initial" id="initial" className="w-25 h-50 py-2 me-3">
+          <option selected hidden value="Select Area">
+              Initial
+            </option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
@@ -41,13 +44,13 @@ function AppointmentDr() {
           {/* <Form.Control className='mb-3 me-3 w-50' type="date"  />
         <Form.Control className='mb-3 w-50' type="time" placeholder="Age" /> */}
           <label htmlFor="date">Date</label>
-          <label htmlFor="time" min="15:00" max="18:00">
+          <label htmlFor="time">
             Time
           </label>
         </div>
         <div className="d-flex justify-content-between">
           <Form.Control className="mb-3 me-3 w-50" type="date" />
-          <Form.Control className="mb-3 w-50" type="time" />
+          <Form.Control className="mb-3 w-50" type="time"  min="15:00" max="18:00" />
         </div>
         <div className="d-flex justify-content-between">
           <select className="w-50 h-50 py-2">

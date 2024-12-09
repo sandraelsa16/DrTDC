@@ -3,16 +3,17 @@
     /* width: 800px; */
    margin: 10px auto;
     color: darkblue;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:sans-serif
 }
 
 .container1 {
-    background-color: rgb(209, 226, 212) ;
-    width: 500px;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid rgb(110, 109, 109);
-    border-radius: 25px;
+    /* background-color: rgba(87, 248, 87, 0.271) ; */
+    width: 700px;
+    margin:  auto;
+    padding: 15px;
+    /* box-shadow: 2px 2px 4px; */
+    
+    /* border-radius: 25px; */
 }
 
 #date {
@@ -23,8 +24,9 @@
 
 
 select{
-    border-radius: 5px;
-    border: none;
+     border: 1px solid rgb(220, 219, 219);
+     border-radius: 5px;
+    /* border: none; */
 }
 
 .captcha{

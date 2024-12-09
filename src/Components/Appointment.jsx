@@ -3,50 +3,34 @@ import "./Appointment.css";
 import { Button, Form } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import { addHomeCollAPI } from "../services/allAPI";
+import { useEffect } from "react";
 
 function Appointment() {
-  const [homeCollData, setHomeCollData] = useState({
-    initial: "",
-    name: "",
-    phnnum: "",
-    age: "",
-    gender: "",
-    date: "",
-    time: "",
-    drname: "",
-    area: "",
-    captcha: "",
-  });
+  const [homeCollData, setHomeCollData] = useState({ initial: "",name: "",phnnum: "",age: "",gender: "",date: "",time: "",address:"",drname: "",area: "" });
   console.log(homeCollData);
+  const [captcha,setCaptcha]=useState("")
+  const [userInput,setUserInput]=useState("")
+  
+  const generateCaptcha = () => {
+    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+      captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    setCaptcha(captcha);
+  }
+
+  useEffect(()=>{generateCaptcha()},[])
 
   const handleSubmit = async () => {
-    const {
-      initial,
-      name,
-      phnnum,
-      age,
-      gender,
-      date,
-      time,
-      drname,
-      area,
-      captcha,
-    } = homeCollData;
 
-    if (
-      !initial ||
-      !name ||
-      !phnnum ||
-      !age ||
-      !gender ||
-      !date ||
-      !time ||
-      !drname ||
-      !area ||
-      !captcha
-    ) {
+    const {initial,name,phnnum,age,gender,date,time,address,drname,area} = homeCollData;
+
+    if (!initial ||!name ||!phnnum ||!age ||!gender ||!date ||!time ||!address||!drname ||!area ||!userInput) {
       toast.warn("Please fill the missing fields");
-    } else {
+        } else if(userInput !== captcha){
+           toast.error("Please re-enter the captcha")
+        } else{
       try {
         const result = await addHomeCollAPI(homeCollData);
         console.log(result);
@@ -54,6 +38,10 @@ function Appointment() {
         if (result.status === 200) {
           setHomeCollData(result.data);
           toast.success("Appointment for Home Collection Booked")
+          setHomeCollData({
+            initial: "",name: "",phnnum: "",age: "",gender: "",date: "",time: "",address:"",drname: "",area: "" 
+          })
+          setUserInput('')
         }else
          { toast.warning(result.response.data)}
         
@@ -74,10 +62,14 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, initial: e.target.value });
             }}
+            value={homeCollData.initial}
             name="initial"
             id="initial"
             className="w-25 h-50 py-2 me-3"
-          >
+          > 
+            <option selected hidden value="Select Area">
+              Initial
+            </option>
             <option value="Mr">Mr</option>
             <option value="Mrs">Mrs</option>
             <option value="Miss">Miss</option>
@@ -86,6 +78,7 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, name: e.target.value });
             }}
+            value={homeCollData.name}
             className="mb-3"
             type="text"
             placeholder="Enter patient name"
@@ -96,6 +89,7 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, phnnum: e.target.value });
             }}
+            value={homeCollData.phnnum}
             className="mb-3 me-3 w-50"
             type="number"
             placeholder="Phone Number "
@@ -104,6 +98,7 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, age: e.target.value });
             }}
+            value={homeCollData.age}
             className="mb-3 w-50"
             type="number"
             placeholder="Age"
@@ -146,6 +141,7 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, date: e.target.value });
             }}
+            value={homeCollData.date}
             className="mb-3 me-3 w-50"
             type="date"
           />
@@ -153,15 +149,18 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, time: e.target.value });
             }}
+            value={homeCollData.time}
             className="mb-3 w-50"
             type="time"
           />
         </div>
+        <textarea className="form-control my-2" placeholder="Enter address" onChange={(e)=>{setHomeCollData({...homeCollData,address:e.target.value})}} value={homeCollData.address} ></textarea>
         <div className="d-flex justify-content-between">
           <Form.Control
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, drname: e.target.value });
             }}
+            value={homeCollData.drname}
             className="mb-3 me-3 w-50"
             type="text"
             placeholder="Enter Dr's Name/Self"
@@ -170,6 +169,7 @@ function Appointment() {
             onChange={(e) => {
               setHomeCollData({ ...homeCollData, area: e.target.value });
             }}
+            value={homeCollData.area}
             className="w-50 h-50 py-2"
           >
             <option selected hidden value="Select Area">
@@ -181,11 +181,10 @@ function Appointment() {
           </select>
         </div>
         <div className="d-flex">
-          <p className="captcha"> 0000</p>
+          <p className="captcha">{captcha}</p>
           <Form.Control
-            onChange={(e) => {
-              setHomeCollData({ ...homeCollData, captcha: e.target.value });
-            }}
+            onChange={(e)=>{setUserInput(e.target.value)}}
+            value={userInput}
             className="mb-3 me-3 w-50"
             type="text"
             placeholder="Enter Captcha"
