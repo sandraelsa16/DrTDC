@@ -26,8 +26,8 @@ function App() {
         <Route path="/userreg" element={<UserAuth register />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/appointment" element={<Appointment />} />
-        <Route path="/appointmentdr" element={<AppointmentDr />} />
+        {/* <Route path="/appointment" element={<Appointment />} />
+        <Route path="/appointmentdr" element={<AppointmentDr />} /> */}
         <Route path="/healthpackage" element={<HealthPackage />} />
         <Route path="/rsltlogin" element={<ResultLogin />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />

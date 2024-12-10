@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 import Appointment from "../Components/Appointment";
-import AppointmentDr from "../Components/AppointmentDr";
 import DrAppSlot from "../Components/DrAppSlot";
 const UserDashboard = () => {
   const [activeSection, setActiveSection] = useState("home");

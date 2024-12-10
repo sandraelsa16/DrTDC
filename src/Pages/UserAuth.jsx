@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import { userRegister } from "../services/allAPI";
+import { userLogin, userRegister } from "../services/allAPI";
 function UserAuth({ register }) {
   const navigate = useNavigate();
   const isRegisterForm = register ? true : false;
@@ -59,6 +59,37 @@ function UserAuth({ register }) {
   };
   // console.log(userData);
   // console.log(repassword);
+
+
+  //handleLogin
+
+  const handleLogin=async(e)=>{
+    e.preventDefault()
+    const {email,password}=userData
+
+    if(!email||!password){
+      toast.warn("Please fill the empty details");
+    }else{
+      try {
+        const result = await userLogin({email,password})
+        console.log(result);
+        
+        if(result.status === 200){
+          
+          sessionStorage.setItem("user details",JSON.stringify(result.data.existingUser))
+          sessionStorage.setItem("username",result.data.existingUser.firstname)
+          sessionStorage.setItem("token",result.data.token)
+          navigate("/userdashboard")
+           setUserData({email:"",password:""})
+          
+        }else{
+          console.log(result.response.data);
+        }
+      } catch (error) {
+        toast.error(error)
+      }
+    }
+  }
 
   return (
     <div className=" p-5" style={{ height: "100vh" }}>
@@ -128,19 +159,7 @@ function UserAuth({ register }) {
                         value={userData.phnnum}
                       />
                     </Form.Group>
-                    <Form.Group
-                      className="mb-3"
-                      controlId="exampleForm.ControlNumber"
-                    >
-                      <Form.Control
-                        type="number"
-                        placeholder="Phone Number"
-                        onChange={(e) =>
-                          setUserData({ ...userData, phnnum: e.target.value })
-                        }
-                        value={userData.phnnum}
-                      />
-                    </Form.Group>
+                    
                   </div>
                 )}
                 <Form.Group
@@ -203,7 +222,7 @@ function UserAuth({ register }) {
                 </div>
               ) : (
                 <div className="text-center">
-                  <button className="btn btn-success text-light my-2">
+                  <button className="btn btn-success text-light my-2" onClick={handleLogin}>
                     Login
                   </button>
                   <p className="text-dark">

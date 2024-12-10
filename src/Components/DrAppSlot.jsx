@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+
 function DrAppSlot() {
+  
     const generateTimeSlots = (startHour, endHour) => {
         const slots = [];
         for (let hour = startHour; hour < endHour; hour++) {
@@ -15,15 +18,23 @@ function DrAppSlot() {
       const [selectedDate, setSelectedDate] = useState('');
       const [selectedSlot, setSelectedSlot] = useState('');
       const [bookedSlots, setBookedSlots] = useState({}); // { date: [bookedSlots] }
-    
+      const [drAppData,setDrAppData]=useState({name:"",age:"",phnnum:"",gender:"",date:"",time:""})
+      console.log(drAppData);
+      
       // Handle date change
-      const handleDateChange = (e) => {
-        setSelectedDate(e.target.value);
-        setSelectedSlot('');
-      };
+      // const handleDateChange = (e) => {
+      //   setSelectedDate(e.target.value);
+      //   setSelectedSlot('');
+      // };
     
       // Handle booking
       const handleBooking = () => {
+         
+         const{name,age,phnnum,gender}=drAppData
+        if(!name||!age||!phnnum||!gender){
+          toast.info("Please fill empty details")
+        }
+
         if (!selectedDate) return alert('Please select a date');
         if (!selectedSlot) return alert('Please select a slot');
     
@@ -46,16 +57,16 @@ function DrAppSlot() {
           <h3 style={{ margin: "10px auto", color: "darkblue",fontFamily:"sans-serif"}}>Doctor Appointment Booking</h3>
           <div className='d-flex w-50 align-items-center gap-2 mx-auto'>
             <label>Patient name: </label>
-             <input type="text" className='form-control w-75 mb-2' placeholder='Enter name' />
+             <input type="text" className='form-control w-75 mb-2' placeholder='Enter name' onChange={(e)=>{setDrAppData({...drAppData,name:e.target.value})}} />
           </div>
           <div className='d-flex w-50 align-items-center gap-2 mx-auto'>
             <label>Age: </label>
-             <input type="number" className='form-control w-25 mb-2' />
+             <input type="number" className='form-control w-25 mb-2' onChange={(e)=>{setDrAppData({...drAppData,age:e.target.value})}} value={drAppData.age} />
             <label>Phone number: </label>
-             <input type="number" className='form-control w-25 mb-2' />
-              <input type="radio" name="gender" id="Male" value="Male" />
+             <input type="number" className='form-control w-25 mb-2' onChange={(e)=>{setDrAppData({...drAppData,phnnum:e.target.value})}} value={drAppData.phnnum}/>
+              <input type="radio" name="gender" id="Male" value="Male" onChange={(e)=>{setDrAppData({...drAppData,gender:e.target.value})}}  />
               <label name="gender">Male</label>
-              <input type="radio" name="gender" id="Female" value="Female" />
+              <input type="radio" name="gender" id="Female" value="Female"onChange={(e)=>{setDrAppData({...drAppData,gender:e.target.value})}} />
               <label name="gender">Female</label>
           </div>
 
@@ -68,7 +79,8 @@ function DrAppSlot() {
               type="date"
               id="appointment-date"
               value={selectedDate}
-              onChange={handleDateChange}
+              // onChange={handleDateChange}
+              onChange={(e)=>{setSelectedDate(e.target.value)}}
               style={{ padding: '5px' }}
             />
           </div>

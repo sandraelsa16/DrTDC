@@ -5,10 +5,18 @@ export const loginAPI = async (user) => {
     return await commonAPI("POST",`${SERVER_URL}/admin`,user,"")
 }
 
-export const addHomeCollAPI = async(reqBody)=>{
-     return await commonAPI("POST",`${SERVER_URL}/appointment`,reqBody,"")
+export const userRegister = async (user) => {
+    return await commonAPI("POST",`${SERVER_URL}/userreg`,user,"")
 }
 
-export const userRegister = async (reqBody) => {
-    return await commonAPI("POST",`${SERVER_URL}/userreg`,reqBody,"")
+export const userLogin = async (user) => {
+    return await commonAPI("POST",`${SERVER_URL}/userlogin`,user,"")
+}
+
+export const addHomeCollAPI = async(reqBody)=>{
+    return await commonAPI("POST",`${SERVER_URL}/appointment`,reqBody,"")
+}
+
+export const deAppAPI = async(reqBody)=>{
+    return await commonAPI("POST",`${SERVER_URL}/drappointment`,reqBody,"")
 }
