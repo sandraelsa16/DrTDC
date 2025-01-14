@@ -83,7 +83,7 @@ function UserAuth({ register }) {
            setUserData({email:"",password:""})
           
         }else{
-          console.log(result.response.data);
+          toast.warn(result.response.data);
         }
       } catch (error) {
         toast.error(error)
